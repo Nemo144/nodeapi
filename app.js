@@ -1,9 +1,11 @@
 //to create the server
 const express = require("express");
-
 const app = express();
 
-app.get("/");
+//importing routes for use
+const postRoutes = require("routes/post");
+
+app.get("/", postRoutes.getPosts);
 
 const port = 8080;
 app.listen(port, () => {
